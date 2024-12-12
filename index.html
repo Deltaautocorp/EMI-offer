@@ -35,6 +35,7 @@
         }
 
         .card {
+	
             background: linear-gradient(to bottom right, #fff, #f9f9f9);
             border-radius: 10px;
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
@@ -230,21 +231,21 @@
             position: fixed;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-10%, -50%);
             z-index: 1000;
             background: #fff;
-            padding: 30px;
+            padding: 80px;
             border-radius: 10px;
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
             display: none;
-            width: 90%;
-            max-width: 500px;
+            width: 50%;
+            max-width: 200px;
         }
 
 .back-room {
             max-width: 1000px;
             margin: 20px auto;
-            padding: 20px;
+            padding: 5px;
             background: #e5e5e5;
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -296,20 +297,20 @@ max-width: 880px;
     transform: translate(-50%, -50%);
     z-index: 1000;
     background: #fff;
-    padding: 20px;
+    padding: 5px;
     border-radius: 10px;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
     display: none;
-    width: 90%;
-    max-width: 500px;
+    width: 80%;
+    max-width: 400px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 400px) {
     .modal {
-        width: 100%;
+        width: 80%;
         max-width: none;
         border-radius: 0;
-        padding: 10px;
+        padding: 20px;
     }
 }
 
@@ -317,11 +318,11 @@ max-width: 880px;
     position: absolute; /* Change to absolute positioning */
     top: 10px;
     right: 10px; /* Adjust the right margin as needed */
-    font-size: 2rem; /* Adjust font size for smaller screens */
+    font-size: 1.5 rem; /* Adjust font size for smaller screens */
 }
 
         .modal h2 {
-            margin-top: 10;
+            margin-top: 10px;
         }
 
         .modal .close {
@@ -394,16 +395,17 @@ max-width: 880px;
     color: #0077cc;  /* Optional: hover effect */
 }
 
-.img-container {
-    text-align: center;
-}
+    .img-container img {
+        max-width: 100%; /* Ensures the image scales down */
+        height: auto; /* Maintains the aspect ratio */
+        display: block; /* Removes any extra space below the image */
+    }
 
-.img-container img {
-    /* Adjust width and height as needed */
-    width: auto;
-    height: auto;
-}
-
+    /* Optional: Centering the image container */
+    .img-container {
+        text-align: center; /* Centers the image container */
+        margin: 0 auto; /* Center alignment if there's a fixed-width parent */
+    }
 
 </style>
 </head>
