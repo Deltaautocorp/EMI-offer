@@ -289,16 +289,46 @@ max-width: 880px;
             transform: scale(1.05);
         }
 
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    width: 90%;
+    max-width: 500px;
+}
+
+@media (max-width: 768px) {
+    .modal {
+        width: 100%;
+        max-width: none;
+        border-radius: 0;
+        padding: 10px;
+    }
+}
+
+.modal .close {
+    position: absolute; /* Change to absolute positioning */
+    top: 10px;
+    right: 10px; /* Adjust the right margin as needed */
+    font-size: 2rem; /* Adjust font size for smaller screens */
+}
 
         .modal h2 {
-            margin-top: 0;
+            margin-top: 10;
         }
 
         .modal .close {
-            position: absolute;
+            position: fixed;
             top: 10px;
             right: 15px;
-            font-size: 1.5rem;
+            font-size: 3rem;
             cursor: pointer;
             color: #444;
         }
@@ -364,7 +394,15 @@ max-width: 880px;
     color: #0077cc;  /* Optional: hover effect */
 }
 
+.img-container {
+    text-align: center;
+}
 
+.img-container img {
+    /* Adjust width and height as needed */
+    width: auto;
+    height: auto;
+}
 
 
 </style>
@@ -374,6 +412,10 @@ max-width: 880px;
 <div class="back-room">
     <div class="container">
         <h1>CHOOSE YOUR SCOOTER</h1>
+	
+	<div class="img-container">
+<img src="https://i.postimg.cc/7hTn3bCN/Pokhara-emi-post.jpg" alt="Image description">
+	</div>
 
         <h2>Vespa Models</h2>
         <div class="grid">
@@ -687,6 +729,12 @@ function toggleAccordion(header) {
         document.getElementById('emi-modal').style.display = 'none';
         document.getElementById('modal-backdrop').style.display = 'none';
     }
+
+document.addEventListener('click', function(event) {
+    if (event.target.id === 'emi-modal' || event.target.id === 'modal-backdrop') {
+        closeModal();
+    }
+});
 
     function calculateEMI() {
         const totalPrice = parseFloat(document.getElementById("total-price").value);
